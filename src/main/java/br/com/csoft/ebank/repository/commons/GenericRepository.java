@@ -11,7 +11,7 @@ import br.com.csoft.ebank.model.AbstractEntity;
  * Classe <code>GenericRepository</code>.<br/>
  * Define Objeto de repositorio de dados da aplicacao.
  * 
- * @author ronaldo.rios.ext
+ * @author ronaldo.rios
  * @version 1.0.0
  * @since 2014-09-16
  * @version 1.0.0

@@ -20,10 +20,8 @@ public class LoginController {
     @Inject
     private FacesContext facesContext;
 
-	
 	private String login;
 	private String password;
-	
 	
 	
 	public String doLogin() {
@@ -34,7 +32,7 @@ public class LoginController {
             facesContext.addMessage(null, m);
 			return "/index.xhtml";
 		}else {
-			return "/views/home.xhtml";
+			return "/views/contas.xhtml";
 		}
 		
 	}

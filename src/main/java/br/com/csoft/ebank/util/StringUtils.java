@@ -7,7 +7,7 @@ import java.util.regex.Pattern;
  * Classe <code>StringUtils</code><br/>
  * 
  * Define classe de utilitarios de manipulacao de Strings
- * @author ronaldo.rios.ext
+ * @author ronaldo.rios
  * @see Pattern
  * @since 2014-09-10
  *

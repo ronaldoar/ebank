@@ -8,7 +8,7 @@ import java.util.List;
  * Define classe de utilitarios de objetos
  * e tipos Java.
  * 
- * @author ronaldo.rios.ext
+ * @author ronaldo.rios
  * @since 2014-09-10
  * @version 1.0.0
  *

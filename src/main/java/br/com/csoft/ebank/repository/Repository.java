@@ -24,7 +24,7 @@ import br.com.csoft.ebank.repository.commons.GenericRepository;
  * Define operacoes crud no database de forma generica 
  * para todas as entidades que extendem AbstractEntity
  * 
- * @author ronaldo.rios.ext
+ * @author ronaldo.rios
  * @since 2013-08-07
  * @version 1.0.0
  * 
