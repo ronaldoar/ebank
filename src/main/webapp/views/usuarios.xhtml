@@ -21,6 +21,38 @@
     xmlns:h="http://java.sun.com/jsf/html"
     template="/WEB-INF/templates/home.xhtml">
     <ui:define name="content">
-		USUARIOS !!!!!
+		
+		<h:panelGroup rendered="#{empty cadastrarUsuarioController.usuarios}">
+            <em>Não existem usuários cadastrados</em>
+        </h:panelGroup>
+        <h:dataTable var="_usu" value="#{cadastrarUsuarioController.usuarios}"
+            rendered="#{not empty cadastrarUsuarioController.usuarios}"
+            styleClass="simpletablestyle">
+            <h:column>
+                <f:facet name="header">Id</f:facet>
+                #{_usu.id}
+            </h:column>
+            <h:column>
+                <f:facet name="header">Username</f:facet>
+                #{_usu.username}
+            </h:column>
+            <h:column>
+                <f:facet name="header">Perfil</f:facet>
+                #{_usu.perfil}
+            </h:column>
+            <h:column>
+                <f:facet name="header">Data</f:facet>
+                #{_usu.dtCadastro}
+            </h:column>
+            <h:column>
+                <f:facet name="header">Alterar</f:facet>
+                <a href="#{request.contextPath}/rest/members/#{_usu.id}">/rest/members/#{_user.id}</a>
+            </h:column>
+            <f:facet name="footer">
+            Para cadastrar novos usuários: <a href="#{request.contextPath}/views/usuario-cadastrar.xhtml">cadastrar</a>
+            </f:facet>
+        </h:dataTable>
+		
+		
     </ui:define>
 </ui:composition>
