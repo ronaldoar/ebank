@@ -5,24 +5,21 @@ import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.enterprise.inject.Default;
 import javax.enterprise.inject.Model;
-import javax.faces.application.FacesMessage;
-import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
 
 import br.com.csoft.ebank.model.Usuario;
 import br.com.csoft.ebank.repository.UsuarioRepository;
-import br.com.csoft.ebank.service.UsuarioService;
 
 @Model
-public class CadastrarUsuarioController {
-	
+public class CadastrarUsuarioController extends DefaultController {
+	private static final long serialVersionUID = 1L;
+
 	@Inject
 	@Default
 	private EntityManager connection;
 	
-	@Inject
-	private FacesContext facesContext;
+	private String msg;
 	
 	private String password;
 	private Usuario usuario;
@@ -36,18 +33,16 @@ public class CadastrarUsuarioController {
 	
 	public void cadastrar() {
 		try {
-			new UsuarioService().cadastrar(usuario, null);
+			new UsuarioRepository(connection).cadastrar(usuario, null);
+			this.msg = "Usuário cadastrado com sucesso.";
 			
 		}catch(IllegalArgumentException ex) {
-			FacesMessage m = new FacesMessage(FacesMessage.SEVERITY_ERROR, ex.getMessage(), null);
-			facesContext.addMessage(null, m);
+			this.msg = ex.getMessage();
 			
 		}catch(Exception ex) {
-			FacesMessage m = new FacesMessage(FacesMessage.SEVERITY_ERROR, "Ocorreu um problema ao tentar cadastrar o usuario!", null);
-			facesContext.addMessage(null, m);
+			this.msg = ex.getMessage();
 		}
 	}
-	
 	
 
 	public Usuario getUsuario() {
@@ -66,12 +61,12 @@ public class CadastrarUsuarioController {
 		this.usuarios = usuarios;
 	}
 
-	public FacesContext getFacesContext() {
-		return facesContext;
+	public String getMsg() {
+		return msg;
 	}
 
-	public void setFacesContext(FacesContext facesContext) {
-		this.facesContext = facesContext;
+	public void setMsg(String msg) {
+		this.msg = msg;
 	}
 
 	public String getPassword() {

@@ -21,6 +21,10 @@
     xmlns:h="http://java.sun.com/jsf/html"
     template="/WEB-INF/templates/home.xhtml">
     
+<!--     <h:head> -->
+	    	<h:outputScript name="../js/usuario-cadastrar.js"></h:outputScript>
+<!--     </h:head> -->
+    
     <ui:define name="content">
 		<h:form id="reg">
             <h2>Cadastro de Usuários</h2>
@@ -29,27 +33,27 @@
             <h:panelGrid columns="3" columnClasses="titleCell">
                 <h:outputLabel for="name" value="Username:" />
                 <h:inputText id="name" value="#{cadastrarUsuarioController.usuario.username}" />
-                <h:message for="name" errorClass="invalid" />
+                <span class="invalid"></span>
 
                 <h:outputLabel for="perfil" value="Perfil:" />
                 <h:inputText id="perfil" value="#{cadastrarUsuarioController.usuario.perfil}" />
-                <h:message for="perfil" errorClass="invalid" />
+                <span class="invalid"></span>
 
                 <h:outputLabel for="senha" value="Senha:" />
                 <h:inputSecret id="senha" value="#{cadastrarUsuarioController.usuario.password}" />
-                <h:message for="senha" errorClass="invalid" />
+                <span class="invalid"></span>
 
                 <h:outputLabel for="csenha" value="Confirma Senha:" />
                 <h:inputSecret id="csenha" value="#{cadastrarUsuarioController.password}" />
-                <h:message for="csenha" errorClass="invalid" />
+                <span class="invalid"></span>
                 
             </h:panelGrid>
+            
+            <span id="msgId"></span>
 
             <p>
                 <h:panelGrid columns="2">
-                    <h:commandButton id="register"
-                        action="#{cadastrarUsuarioController.cadastrar}" value="Cadastrar" styleClass="register" />
-                    <h:messages styleClass="messages" errorClass="invalid" infoClass="valid" warnClass="warning" globalOnly="true" />
+                    <h:commandButton id="register" action="#{cadastrarUsuarioController.cadastrar}" value="Cadastrar" styleClass="register"/>
                 </h:panelGrid>
             </p>
         </h:form>

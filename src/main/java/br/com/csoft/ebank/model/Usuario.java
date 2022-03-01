@@ -37,7 +37,7 @@ public class Usuario extends AbstractEntity {
     @NotNull
     @NotEmpty
     @Email
-    @Column(name = "password", nullable = false, length = 8)
+    @Column(name = "password", nullable = false, length = 100)
 	private String password;
     
     @NotNull

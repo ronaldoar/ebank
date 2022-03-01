@@ -4,29 +4,29 @@
     xmlns:f="http://java.sun.com/jsf/core"
     xmlns:h="http://java.sun.com/jsf/html"
     template="/WEB-INF/templates/default.xhtml">
-    
-    <div style="border:10px solid red;">
+      
 	    <ui:define name="content">
 	        <h1>Ebank | Login</h1>
 	        
 	         <h:form id="login">
-	            <h:panelGrid columns="3" columnClasses="titleCell">
-	                <h:outputLabel for="login" value="Login:" />
-	                <h:inputText id="login" value="#{loginController.login}" />
-	                <h:message for="login" errorClass="invalid" />
+	            <h:panelGrid columns="2" columnClasses="titleCell">
+	                <h:outputLabel for="loginID" value="Login:" />
+	                <h:inputText id="loginID" value="#{loginController.login}" />
 	
-	                <h:outputLabel for="pass" value="senha:" />
-	                <h:inputText id="pass" value="#{loginController.password}" />
-	                <h:message for="pass" errorClass="invalid" />
+	                <h:outputLabel for="passID" value="senha:" />
+	                <h:inputText id="passID" value="#{loginController.password}" />
 	            </h:panelGrid>
 	            
 	            <p>
 	                <h:panelGrid columns="3">
-	                    <h:commandButton id="register" action="#{loginController.doLogin}" value="Confirmar" styleClass="register" />
-	                    <h:messages styleClass="messages" errorClass="invalid" infoClass="valid" warnClass="warning" globalOnly="true" />
+	                    <h:commandButton id="loginBtn" action="#{loginController.doLogin}" value="Confirmar" styleClass="register"/>
 	                </h:panelGrid>
+
+                   	<span class="info">
+                   		#{loginController.msg}
+                   	</span>
 	            </p>
 	        </h:form>
-	    </ui:define>
-    </div>
+	        
+	    </ui:define>	    
 </ui:composition>

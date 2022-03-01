@@ -1,44 +1,26 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html" xmlns:ui="http://java.sun.com/jsf/facelets">
 	<h:head>
-	    <title>ebank</title>
+	    <title>#{bunble.lbl.title.app}</title>
 	    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	    <h:outputStylesheet name="css/app.css" />
 	    <h:outputStylesheet name="css/screen.css" />
-	    <h:outputStylesheet name="css/main.css" />
 	    <h:outputScript name="js/jquery-3.6.0.min.js"></h:outputScript>
-	    
-	    <style>
-	        #menu ul {
-				padding:0px;
-				margin:0px;
-				background-color:#EDEDED;
-				list-style:none;
-			}
-			
-			
-			#menu ul li { display: inline; }
-			
-			#menu ul li a {
-				padding: 2px 10px;
-				display: inline-block;
-			
-				/* visual do link */
-				background-color:#EDEDED;
-				color: #333;
-				text-decoration: none;
-				border-bottom:3px solid #EDEDED;
-			}
-			
-			#menu ul li a:hover {
-				background-color:#D6D6D6;
-				color: #6D6D6D;
-				border-bottom:3px solid #EA0000;
-			}
-		</style>
+
 	</h:head>
 	<h:body>
 	    <div id="container">
 	    	<h1>Ebank | Seja bem vindo!</h1>
+	    	
+	    	
+	    	<div class="wrapper-login">
+		    	<div class="container-login">
+		    		<span class="login">Login:</span><span class="login-desc">#{user_login.username}</span>
+		    	</div>
+	    	</div>
+	    	
+	    	<div style="border: 1px dotted; margin-bottom:30px;"></div>
+	    	
 	        <div class="dualbrand">
 	            <img src="../resources/gfx/bank.png" style="margin-top:50px;"/>
 	        </div>
@@ -53,10 +35,10 @@
 				</ul>
 			</nav>
 	        
-	        
 	        <div id="content">
 	            <ui:insert name="content">[o seu conteudo vem aqui]</ui:insert>
 	        </div>
+	        
 	        <div id="footer">
 	            <p>
 	                3 CARAS SOFT - Administrator Bank<br />
